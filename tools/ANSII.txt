@@ -1,0 +1,60 @@
+Text Colors:
+
+Black: \033[30m
+Red: \033[31m
+Green: \033[32m
+Yellow: \033[33m
+Blue: \033[34m
+Magenta: \033[35m
+Cyan: \033[36m
+White: \033[37m
+
+
+]]]]]]]]
+
+
+Background Colors:
+
+Black: \033[40m
+Red: \033[41m
+Green: \033[42m
+Yellow: \033[43m
+Blue: \033[44m
+Magenta: \033[45m
+Cyan: \033[46m
+White: \033[47m
+
+
+
+]]]]]]]]
+
+Text Styles:
+
+
+Bold: \033[1m
+Dim: \033[2m
+Underlined: \033[4m
+Blink: \033[5m
+Reverse: \033[7m
+Hidden: \033[8m
+Reset: Reset all attributes: \033[0m
+]]]]]]]
+
+Clear Screen: Clear the screen and position the cursor at the top-left corner: \033[2J
+Move Cursor:
+
+Move the cursor up: \033[A
+Move the cursor down: \033[B
+Move the cursor right: \033[C
+Move the cursor left: \033[D
+Position Cursor:
+
+Position the cursor at a specific row and column (replace row and col with the desired values): \033[row;colH or \033[row;colf
+Save and Restore Cursor Position:
+
+Save cursor position: \033[s
+Restore cursor position: \033[u
+
+]]]]]]]]]
+
+

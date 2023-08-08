@@ -1,0 +1,11 @@
+{
+    "cSpell.words": [
+        "colf"
+    ],
+    "files.associations": {
+        "*.json": "jsonc",
+        "*.cpp": "cpp",
+        "*.js": "javascript",
+        "consolecolor.h": "c"
+    }
+}
