@@ -78,21 +78,21 @@
     #define E_QUESTION_MARK '\?' // ? Is This Needed
 
 #elif _WIN32
-    #define C_BLACK 0,
-    #define C_DARKBLUE FOREGROUND_BLUE,
-    #define C_DARKGREEN FOREGROUND_GREEN,
-    #define C_DARKCYAN FOREGROUND_GREEN | FOREGROUND_BLUE,
-    #define C_DARKRED FOREGROUND_RED,
-    #define C_DARKMAGENTA FOREGROUND_RED | FOREGROUND_BLUE,
-    #define C_DARKYELLOW FOREGROUND_RED | FOREGROUND_GREEN,
-    #define C_DARKGRAY FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE,
-    #define C_GRAY FOREGROUND_INTENSITY,
-    #define C_BLUE FOREGROUND_INTENSITY | FOREGROUND_BLUE,
-    #define C_GREEN FOREGROUND_INTENSITY | FOREGROUND_GREEN,
-    #define C_CYAN FOREGROUND_INTENSITY | FOREGROUND_GREEN | FOREGROUND_BLUE,
-    #define C_RED FOREGROUND_INTENSITY | FOREGROUND_RED,
-    #define C_MAGENTA FOREGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_BLUE,
-    #define C_YELLOW FOREGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_GREEN,
+    #define C_BLACK 0
+    #define C_DARKBLUE FOREGROUND_BLUE
+    #define C_DARKGREEN FOREGROUND_GREEN
+    #define C_DARKCYAN FOREGROUND_GREEN | FOREGROUND_BLUE
+    #define C_DARKRED FOREGROUND_RED
+    #define C_DARKMAGENTA FOREGROUND_RED | FOREGROUND_BLUE
+    #define C_DARKYELLOW FOREGROUND_RED | FOREGROUND_GREEN
+    #define C_DARKGRAY FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE
+    #define C_GRAY FOREGROUND_INTENSITY
+    #define C_BLUE FOREGROUND_INTENSITY | FOREGROUND_BLUE
+    #define C_GREEN FOREGROUND_INTENSITY | FOREGROUND_GREEN
+    #define C_CYAN FOREGROUND_INTENSITY | FOREGROUND_GREEN | FOREGROUND_BLUE
+    #define C_RED FOREGROUND_INTENSITY | FOREGROUND_RED
+    #define C_MAGENTA FOREGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_BLUE
+    #define C_YELLOW FOREGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_GREEN
     #define C_WHITE FOREGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE
 #endif
 
@@ -183,6 +183,24 @@
 
 #elif _WIN32
 
+#define C_BLACK 0
+#define C_DARKBLUE FOREGROUND_BLUE
+#define C_DARKGREEN FOREGROUND_GREEN
+#define C_DARKCYAN FOREGROUND_GREEN | FOREGROUND_BLUE
+#define C_DARKRED FOREGROUND_RED
+#define C_DARKMAGENTA FOREGROUND_RED | FOREGROUND_BLUE
+#define C_DARKYELLOW FOREGROUND_RED | FOREGROUND_GREEN
+#define C_DARKGRAY FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE
+#define C_GRAY FOREGROUND_INTENSITY
+#define C_BLUE FOREGROUND_INTENSITY | FOREGROUND_BLUE
+#define C_GREEN FOREGROUND_INTENSITY | FOREGROUND_GREEN
+#define C_CYAN FOREGROUND_INTENSITY | FOREGROUND_GREEN | FOREGROUND_BLUE
+#define C_RED FOREGROUND_INTENSITY | FOREGROUND_RED
+#define C_MAGENTA FOREGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_BLUE
+#define C_YELLOW FOREGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_GREEN
+#define C_WHITE FOREGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE
+
+
 void c_setAttribute(int attribute) {
     HANDLE  hConsole;
     hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -192,7 +210,7 @@ void c_setAttribute(int attribute) {
 void c_reset() {
     HANDLE  hConsole;
     hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttribute(hConsole, WHITE);
+    SetConsoleTextAttribute(hConsole, C_WHITE);
 }
 
 void c_setAll(int attributes[], const size_t length) {
@@ -203,28 +221,28 @@ void c_setAll(int attributes[], const size_t length) {
 //Function to show an error box
 void c_errorBox(const char* msg) {
     c_reset();
-    c_setAttribute(C_RED);
+    c_setAttribute(FOREGROUND_INTENSITY | FOREGROUND_RED);
     printf("%s", msg);
 }
 
 //Function to show a warning box
 void c_warningBox(const char* msg) {
     c_reset();
-    c_setAttribute(C_YELLOW);
+    c_setAttribute(FOREGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_GREEN);
     printf("%s", msg);
 }
 
 //Function to show a message box
 void c_messageBox(const char* msg) {
     c_reset();
-    c_setAttribute(C_CYAN);
+    c_setAttribute(FOREGROUND_INTENSITY | FOREGROUND_GREEN | FOREGROUND_BLUE);
     printf("%s", msg);
 }
 
 //Function to show a success box
 void c_successBox(const char* msg) {
     c_reset();
-    c_setAttribute(C_GREEN);
+    c_setAttribute(FOREGROUND_INTENSITY | FOREGROUND_GREEN);
     printf("%s", msg);
 }
 
