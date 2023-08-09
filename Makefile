@@ -1,5 +1,6 @@
 CXX = g++
-CXXFLAGS = -Wall -O2
+CC = gcc
+CXXFLAGS = -Wall -O2 
 SRC_DIR = examples
 BUILD_DIR = build/examples
 
@@ -13,10 +14,10 @@ EXECUTABLES = $(patsubst $(SRC_DIR)/%.c,$(BUILD_DIR)/%,$(patsubst $(SRC_DIR)/%.c
 all: $(EXECUTABLES)
 
 $(BUILD_DIR)/%: $(BUILD_DIR)/%.o
-	$(CXX) $(CXXFLAGS) -o $@ $<
+	$(CXX) $(CXXFLAGS) -o $@ $< -lm
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c | $(BUILD_DIR)
-	$(CXX) $(CXXFLAGS) -c -o $@ $<
+	$(CC) $(CXXFLAGS) -c -o $@ $<
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp | $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) -c -o $@ $<

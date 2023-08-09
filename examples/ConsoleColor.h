@@ -1,3 +1,5 @@
+//Customizable Console
+
 //Starting of ConsoleColor.h file
 //This header file helps to you to customize your console applications
 
@@ -129,6 +131,7 @@ void c_draw_box(int width, int height, char crossChar, char horizontalChar, char
     printf("%c\n", crossChar);
 }
 
+//Function to draw text box
 void c_draw_text_box(int height, char crossChar, char horizontalChar, char verticalChar, const char* text) {
     int textPoint = -1;
 
@@ -163,6 +166,86 @@ void c_draw_text_box(int height, char crossChar, char horizontalChar, char verti
         printf("%c", verticalChar);
     }
     printf("%c\n", crossChar);
+}
+
+//Function to show an error box
+void c_errorBox(const char* msg) {
+    c_reset();
+    c_setAttribute(BG_RED);
+    printf("%s", msg);
+    c_reset();
+}
+
+//Function to show a warning box
+void c_warningBox(const char* msg) {
+    c_reset();
+    c_setAttribute(BG_YELLOW);
+    printf("%s", msg);
+    c_reset();
+}
+
+//Function to show a message box
+void c_messageBox(const char* msg) {
+    c_reset();
+    c_setAttribute(BG_CYAN);
+    printf("%s", msg);
+    c_reset();
+}
+
+//Function to show a success box
+void c_successBox(const char* msg) {
+    c_reset();
+    c_setAttribute(BG_GREEN);
+    printf("%s", msg);
+    c_reset();
+}
+
+//Function to draw a circle
+void c_draw_circle(int radius) {
+    for (int y = -radius; y <= radius; ++y) {
+        for (int x = -radius; x <= radius; ++x) {
+            double distance = sqrt(x * x + y * y);
+            if (distance > radius - 0.5 && distance < radius + 0.5) {
+                printf("*");
+            } else {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+}
+
+//Function to draw a triangle
+void c_draw_triangle(int height) {
+    for (int row = 1; row <= height; ++row) {
+        for (int space = 1; space <= height - row; ++space) {
+            printf(" ");
+        }
+        for (int star = 1; star <= 2 * row - 1; ++star) {
+            printf("*");
+        }
+        printf("\n");
+    }
+}
+
+//Function to draw a triangle with text
+void c_draw_text_triangle(int height, const char *text) {
+    int textLength = strlen(text);
+    int textPosition = (2 * height - 1 - textLength) / 2;
+
+    for (int row = 1; row <= height; ++row) {
+        for (int space = 1; space <= height - row; ++space) {
+            printf(" ");
+        }
+        if (row == height / 2 + 1) {
+            printf("%*s%s%*s", textPosition, "", text, textPosition, "");
+        } else {
+            for (int star = 1; star <= 2 * row - 1; ++star) {
+                printf("*");
+            }
+        }
+        printf("\n");
+    }
 }
 
 

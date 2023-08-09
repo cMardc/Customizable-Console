@@ -1,22 +1,12 @@
 #include <stdio.h>
+#include <math.h>
 #include "ConsoleColor.h"
 
 int main(int argc, char** argv) {
     c_reset();
-    c_setAttribute(BG_RED);
-    printf("This is an error box!");
+    c_errorBox("This is an error box! (X)\n");
+    c_warningBox("This is a warning box! (!)\n");
+    c_messageBox("This is a message box! (i)\n");
+    c_successBox("This is a success box! (v)\n");
     c_reset();
-    printf("\n");
-    c_setAttribute(BG_BLUE);
-    printf("This is a message box!");
-    c_reset();
-    printf("\n");
-    c_setAttribute(BG_GREEN);
-    printf("This is a success box!");
-    c_reset();
-    printf("\n");
-    c_setAttribute(BG_YELLOW);
-    printf("This is a warning box!");
-    c_reset();
-    printf("\n");
 }
