@@ -15,6 +15,8 @@
 
 //Pre-defines for escape characters
 
+//ANSI escape codes
+
 //Color values
 #define C_BLACK "\033[30m"
 #define C_RED "\033[31m"
@@ -53,18 +55,35 @@
 //Reset value
 #define A_RESET "\033[0m"
 
+//ASCII escape codes
+#define E_ALERT '\a'
+#define E_BACKSPACE '\b'
+#define E_FORM_FEED '\f' //Not used
+#define E_NEWLINE '\n'
+#define E_RETURN '\r' //Actually, enter on keyboard
+#define E_TAB '\t' 
+#define E_BACKSLASH '\\'
+#define E_DOUBLE_QUOTE '\"'
+#define E_SINGLE_QUOTE '\''
+#define E_VERTICAL_TAB '\v'
+#define E_QUESTION_MARK '\?' // ? Is This Needed
+
+
 //Set an attribute for console look
+// ! (Linux Only)
 void c_setAttribute(const char* attribute) {
     printf("%s", attribute);
 }
 
 //Reset console
+// ! (Linux Only)
 void c_reset() {
     printf(A_RESET);
 }
 
 //Set more than one Attribute
-void c_setAll(const char* attributes[], size_t length) {
+// ! (Linux Only)
+void c_setAll(const char* attributes[], const size_t length) {
     for(size_t i = 0; i < length; i++) {
         c_setAttribute(attributes[i]);
     }
@@ -86,22 +105,22 @@ int c_get_columns() {
 
 
 // Function to set the cursor position to an absolute row and column
-void c_setCursorPosition(int row, int col) {
+void c_setCursorPosition(const int row, const int col) {
     printf("\033[%d;%dH", row, col);
 }
 
 // Function to move the cursor to the beginning of a specific row
-void c_moveToRow(int row) {
+void c_moveToRow(const int row) {
     c_setCursorPosition(row, 1);
 }
 
 // Function to move the cursor to the beginning of a specific column
-void c_moveToColumn(int col) {
+void c_moveToColumn(const int col) {
     c_setCursorPosition(1, col);
 }
 
 // Function to draw a horizontal line with a specified width
-void c_drawHorizontalLine(int width, char horizontalChar) {
+void c_drawHorizontalLine(const int width, const char horizontalChar) {
     for (int i = 0; i < width; i++) {
         putchar(horizontalChar);
     }
@@ -109,7 +128,7 @@ void c_drawHorizontalLine(int width, char horizontalChar) {
 }
 
 //Function to draw a box with given height and width
-void c_draw_box(int width, int height, char crossChar, char horizontalChar, char verticalChar) {
+void c_draw_box(const int width, const int height, const char crossChar, const char horizontalChar, const char verticalChar) {
     printf("%c", crossChar);
     for(int i = 0; i < width - 2; i++) {
         printf("%c", verticalChar);
@@ -132,7 +151,7 @@ void c_draw_box(int width, int height, char crossChar, char horizontalChar, char
 }
 
 //Function to draw text box
-void c_draw_text_box(int height, char crossChar, char horizontalChar, char verticalChar, const char* text) {
+void c_draw_text_box(const int height, const char crossChar, const char horizontalChar, const char verticalChar, const char* text) {
     int textPoint = -1;
 
     if(height % 2 == 0) {
@@ -173,7 +192,6 @@ void c_errorBox(const char* msg) {
     c_reset();
     c_setAttribute(BG_RED);
     printf("%s", msg);
-    c_reset();
 }
 
 //Function to show a warning box
@@ -181,7 +199,6 @@ void c_warningBox(const char* msg) {
     c_reset();
     c_setAttribute(BG_YELLOW);
     printf("%s", msg);
-    c_reset();
 }
 
 //Function to show a message box
@@ -189,7 +206,6 @@ void c_messageBox(const char* msg) {
     c_reset();
     c_setAttribute(BG_CYAN);
     printf("%s", msg);
-    c_reset();
 }
 
 //Function to show a success box
@@ -197,11 +213,10 @@ void c_successBox(const char* msg) {
     c_reset();
     c_setAttribute(BG_GREEN);
     printf("%s", msg);
-    c_reset();
 }
 
 //Function to draw a circle
-void c_draw_circle(int radius) {
+void c_draw_circle(const int radius) {
     for (int y = -radius; y <= radius; ++y) {
         for (int x = -radius; x <= radius; ++x) {
             double distance = sqrt(x * x + y * y);
@@ -216,7 +231,7 @@ void c_draw_circle(int radius) {
 }
 
 //Function to draw a triangle
-void c_draw_triangle(int height) {
+void c_draw_triangle(const int height) {
     for (int row = 1; row <= height; ++row) {
         for (int space = 1; space <= height - row; ++space) {
             printf(" ");
@@ -229,7 +244,7 @@ void c_draw_triangle(int height) {
 }
 
 //Function to draw a triangle with text
-void c_draw_text_triangle(int height, const char *text) {
+void c_draw_text_triangle(const int height, const char *text) {
     int textLength = strlen(text);
     int textPosition = (2 * height - 1 - textLength) / 2;
 
@@ -249,4 +264,8 @@ void c_draw_text_triangle(int height, const char *text) {
 }
 
 
+//Function to alert
+void alertSound() {
+    printf("%c", E_ALERT);
+}
 
