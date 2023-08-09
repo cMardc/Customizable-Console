@@ -10,7 +10,6 @@
 <h3>Customizable Console - Let's you to to make cool looking applications on terminal. ~ Your Program, Your Style.</h3>
 <br>
 <br>
-<br>
 
 <hr>
 <h2>Platform Support</h2>
