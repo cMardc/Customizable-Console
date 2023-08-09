@@ -2,13 +2,13 @@
 
 <br>
 
-![Static Badge](https://img.shields.io/badge/Language-C-blue)
+![Static Badge](https://img.shields.io/badge/Language-C-blue) 
 ![GitHub all releases](https://img.shields.io/github/downloads/cMardc/Customizable-Console/total)
 ![GitHub](https://img.shields.io/github/license/cMardc/Customizable-Console)
 
 <br>
-
-<img src='assets/preview.png' alt='Preview' title='Preview'>
+<br>
+<br>
 
 <hr>
 <h2>Platform Support</h2>
