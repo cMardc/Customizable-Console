@@ -1,0 +1,17 @@
+{
+    "cSpell.words": [
+        "DARKCYAN",
+        "DARKGRAY",
+        "DARKGREEN",
+        "DARKMAGENTA",
+        "DARKRED",
+        "DARKYELLOW"
+    ],
+    "C_Cpp.errorSquiggles": "enabled",
+    "files.associations": {
+        "*.json": "jsonc",
+        "*.cpp": "cpp",
+        "*.js": "javascript",
+        "consolecolor.h": "c"
+    }
+}

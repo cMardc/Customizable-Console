@@ -1,36 +1,29 @@
-# Determine the operating system
-ifeq ($(OS),Windows_NT)
-    PLATFORM := Windows
+CC := gcc
+CFLAGS := -Wall
+LDFLAGS :=
+
+ifeq ($(shell uname -s), Windows_NT)
+    OUTPUT_DIR := build\examples
+    EXECUTABLE_EXTENSION := .exe
 else
-    UNAME_S := $(shell uname -s)
-    ifeq ($(UNAME_S),Linux)
-        PLATFORM := Linux
-    endif
+    OUTPUT_DIR := build/examples
+    EXECUTABLE_EXTENSION :=
+    LDFLAGS := -lm
 endif
 
-# Set source and output directories based on the platform
-ifeq ($(PLATFORM),Windows)
-    SOURCE_DIR := examples/Windows
-    OUTPUT_DIR := build/examples/Windows
-    CC := gcc
-else
-    SOURCE_DIR := examples/Linux
-    OUTPUT_DIR := build/examples/Linux
-    CC := gcc -lm
-endif
+SRC_DIR := examples
+SRC_FILES := $(wildcard $(SRC_DIR)/*.c)
+EXECUTABLES := $(patsubst $(SRC_DIR)/%.c,$(OUTPUT_DIR)/%$(EXECUTABLE_EXTENSION),$(SRC_FILES))
 
-# Source files to compile
-SOURCE_FILES := $(wildcard $(SOURCE_DIR)/*.c)
-OBJ_FILES := $(patsubst $(SOURCE_DIR)/%.c, $(OUTPUT_DIR)/%.o, $(SOURCE_FILES))
+all: $(EXECUTABLES)
 
-# Target for building all objects
-all: $(OBJ_FILES)
+$(OUTPUT_DIR)/%$(EXECUTABLE_EXTENSION): $(SRC_DIR)/%.c | $(OUTPUT_DIR)
+	$(CC) $(CFLAGS) $< -o $@ $(LDFLAGS)
 
-# Rule for compiling source files to object files
-$(OUTPUT_DIR)/%.o: $(SOURCE_DIR)/%.c
-	@mkdir -p $(OUTPUT_DIR)
-	$(CC) -c $< -o $@
+$(OUTPUT_DIR):
+	mkdir -p $(OUTPUT_DIR)
 
-# Clean rule to remove compiled files
 clean:
 	rm -rf $(OUTPUT_DIR)
+
+.PHONY: all clean
