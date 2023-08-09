@@ -2,8 +2,6 @@
 
 <br>
 <br>
-<br>
-<br>
 
 ![Static Badge](https://img.shields.io/badge/Language-C-blue) 
 ![GitHub all releases](https://img.shields.io/github/downloads/cMardc/Customizable-Console/total)
