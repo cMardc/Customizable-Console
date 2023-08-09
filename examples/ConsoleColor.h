@@ -1,11 +1,13 @@
-//Customizable Console
+// * Customizable Console
 
 //Starting of ConsoleColor.h file
 //This header file helps to you to customize your console applications
 
 #pragma once
 
-//Used files / Headers / Libraries 
+//=============================================================================================================================================================
+// * Used files / Headers / Libraries 
+
 
 #include <stdio.h>
 #include <math.h>
@@ -21,7 +23,8 @@
 
 
 
-//Pre-defines for escape characters
+//=============================================================================================================================================================
+// * Pre-defines for escape characters
 
 //ANSI escape codes
 
@@ -78,6 +81,7 @@
     #define E_QUESTION_MARK '\?' // ? Is This Needed
 
 #elif _WIN32
+    //Color Values
     #define C_BLACK 0
     #define C_DARKBLUE FOREGROUND_BLUE
     #define C_DARKGREEN FOREGROUND_GREEN
@@ -94,9 +98,29 @@
     #define C_MAGENTA FOREGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_BLUE
     #define C_YELLOW FOREGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_GREEN
     #define C_WHITE FOREGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE
+    
+    //ASCII escape codes
+    #define E_ALERT '\a'
+    #define E_BACKSPACE '\b'
+    #define E_FORM_FEED '\f' //Not used
+    #define E_NEWLINE '\n'
+    #define E_RETURN '\r' //Actually, enter on keyboard
+    #define E_TAB '\t' 
+    #define E_BACKSLASH '\\'
+    #define E_DOUBLE_QUOTE '\"'
+    #define E_SINGLE_QUOTE '\''
+    #define E_VERTICAL_TAB '\v'
+    #define E_QUESTION_MARK '\?' // ? Is This Needed
+
 #endif
 
+
+
+//=============================================================================================================================================================
+// * Functions
 #ifdef linux
+    // * Functions For Linux 
+
     //Set an attribute for console look
     void c_setAttribute(const char* attribute) {
         printf("%s", attribute);
