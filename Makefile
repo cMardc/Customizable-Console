@@ -1,31 +1,36 @@
-CXX = g++
-CC = gcc
-CXXFLAGS = -Wall -O2 
-SRC_DIR = examples
-BUILD_DIR = build/examples
+# Determine the operating system
+ifeq ($(OS),Windows_NT)
+    PLATFORM := Windows
+else
+    UNAME_S := $(shell uname -s)
+    ifeq ($(UNAME_S),Linux)
+        PLATFORM := Linux
+    endif
+endif
 
-# Get a list of all source files in the examples directory
-SOURCES = $(wildcard $(SRC_DIR)/*.c) $(wildcard $(SRC_DIR)/*.cpp)
+# Set source and output directories based on the platform
+ifeq ($(PLATFORM),Windows)
+    SOURCE_DIR := examples/Windows
+    OUTPUT_DIR := build/examples/Windows
+    CC := gcc
+else
+    SOURCE_DIR := examples/Linux
+    OUTPUT_DIR := build/examples/Linux
+    CC := gcc -lm
+endif
 
-# Convert source file paths to corresponding output file paths in build directory
-OBJECTS = $(patsubst $(SRC_DIR)/%.c,$(BUILD_DIR)/%.o,$(patsubst $(SRC_DIR)/%.cpp,$(BUILD_DIR)/%.o,$(SOURCES)))
-EXECUTABLES = $(patsubst $(SRC_DIR)/%.c,$(BUILD_DIR)/%,$(patsubst $(SRC_DIR)/%.cpp,$(BUILD_DIR)/%,$(SOURCES)))
+# Source files to compile
+SOURCE_FILES := $(wildcard $(SOURCE_DIR)/*.c)
+OBJ_FILES := $(patsubst $(SOURCE_DIR)/%.c, $(OUTPUT_DIR)/%.o, $(SOURCE_FILES))
 
-all: $(EXECUTABLES)
+# Target for building all objects
+all: $(OBJ_FILES)
 
-$(BUILD_DIR)/%: $(BUILD_DIR)/%.o
-	$(CXX) $(CXXFLAGS) -o $@ $< -lm
+# Rule for compiling source files to object files
+$(OUTPUT_DIR)/%.o: $(SOURCE_DIR)/%.c
+	@mkdir -p $(OUTPUT_DIR)
+	$(CC) -c $< -o $@
 
-$(BUILD_DIR)/%.o: $(SRC_DIR)/%.c | $(BUILD_DIR)
-	$(CC) $(CXXFLAGS) -c -o $@ $<
-
-$(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp | $(BUILD_DIR)
-	$(CXX) $(CXXFLAGS) -c -o $@ $<
-
-$(BUILD_DIR):
-	mkdir -p $(BUILD_DIR)
-
+# Clean rule to remove compiled files
 clean:
-	rm -rf $(BUILD_DIR)
-
-.PHONY: all clean
+	rm -rf $(OUTPUT_DIR)

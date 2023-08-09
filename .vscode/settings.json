@@ -6,6 +6,7 @@
         "*.json": "jsonc",
         "*.cpp": "cpp",
         "*.js": "javascript",
-        "consolecolor.h": "c"
+        "consolecolor.h": "c",
+        "ctype.h": "c"
     }
 }
