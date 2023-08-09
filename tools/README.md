@@ -1,4 +1,4 @@
-<img src='assets/logo.png' alt='Logo' title='Logo'>
+<img src='../assets/logo.png' alt='Logo' title='Logo'>
 
 <br>
 <br>
