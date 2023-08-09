@@ -74,6 +74,8 @@
 <h5>More Info: </h5>
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/cMardc/Customizable-Console)
+![GitHub Repo stars](https://img.shields.io/github/stars/cMardc/Customizable-Console)
+
 
 
 <h5>Other links : </h5>
