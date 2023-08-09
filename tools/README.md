@@ -6,7 +6,7 @@
 <br>
 
 
-<h4>This directory is For storing extra resource i used.</h4>
+<h4>This directory is For storing extra resource I used.</h4>
 <hr>
 <h2>ANSII.txt</h2>
 
