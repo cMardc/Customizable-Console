@@ -117,37 +117,60 @@
 
 
 //=============================================================================================================================================================
-// * Functions
+// * All Functions
 #ifdef linux
     // * Functions For Linux 
 
-    //Set an attribute for console look
+
+    /*
+        * @brief (Linux) This function sets an attribute for console look
+        * @param attribute is attribute that will be used (const char*)
+        * @return This function does not return anything  
+    */
     void c_setAttribute(const char* attribute) {
         printf("%s", attribute);
     }
 
-    //Reset console
+    /*
+        * @brief (Linux) This function resets all attributes for current console
+        * This function does not take any parameters
+        * @return This function does not return anything
+    */
     void c_reset() {
         printf(A_RESET);
     }
 
-    //Set more than one Attribute
+    /*
+        * @brief (Linux) Set more than one Attribute
+        * @param attributes A string (const char*) parameter where all attributes must be stored
+        * @param length A number (const size_t) specifies length of first argument / parameter
+        * @return This function does not return anything
+    */
     void c_setAll(const char* attributes[], const size_t length) {
         for (size_t i = 0; i < length; i++) {
             c_setAttribute(attributes[i]);
         }
     }
 
-    // Function to get the current number of rows in the console
-    // ! (Linux Only)
+    /* 
+        * @brief (Linux) Function to get the current number of rows in the console
+        * This function does not take any parameters
+        * @return This function returns number of rows in current console (int)
+        * @note This function is Linux only
+    */
     int c_get_rows() {
         struct winsize ws;
         ioctl(STDOUT_FILENO, TIOCGWINSZ, &ws);
         return ws.ws_row;
     }
 
-    // Function to get the current number of columns in the console
-    // ! (Linux Only)
+    
+    /*
+        * @brief (Linux) Function to get the current number of columns in the console
+        * This function doe snot take any parameters
+        * @return This function returns number of columns in current console (int)
+        * @note This function is Linux only
+    */
     int c_get_columns() {
         struct winsize ws;
         ioctl(STDOUT_FILENO, TIOCGWINSZ, &ws);
@@ -155,52 +178,91 @@
     }
 
 
-    // Function to set the cursor position to an absolute row and column
-    // ! (Linux Only)
+    /*
+        * @brief (Linux) Function to set the cursor position to an absolute row and column
+        * @param row This argument must be a number (const int) and it sets row for cursor
+        * @param col This argument must be a number (const int) and it sets column for cursor
+        * @return This function does not return anything
+        * @note This function is Linux only
+    */
     void c_setCursorPosition(const int row, const int col) {
         printf("\033[%d;%dH", row, col);
     }
 
-    // Function to move the cursor to the beginning of a specific row
-    // ! (Linux Only)
+    /*
+        * @brief (Linux) Function to move cursor to a beginning of a specific row
+        * @param row This argument must be a number (const int) and it sets row for cursor
+        * @return This function does not return anything
+        * @note This function is Linux only
+    */
     void c_moveToRow(const int row) {
         c_setCursorPosition(row, 1);
     }
 
-    // Function to move the cursor to the beginning of a specific column
-    // ! (Linux Only)
+    /*
+        * @brief (Linux) Function to move the cursor to the beginning of a specific column
+        * @param col This argument must be a number (const int) and it sets column for cursor
+        * @return This function does not return anything
+        * @note This function is Linux only
+    */
     void c_moveToColumn(const int col) {
         c_setCursorPosition(1, col);
     }
-    //Function to show an error box
+
+    /*
+        * @brief (Linux) Function to print an error box
+        * @param msg This argument must be a string (const char*) 
+        * @return This function doe snot return anything
+        * @note This function prints message directly without asking
+    */
     void c_errorBox(const char* msg) {
         c_reset();
         c_setAttribute(BG_RED);
         printf("%s", msg);
     }
 
-    //Function to show a warning box
+    /*
+        * @brief (Linux) Function to print a warning box
+        * @param msg This argument must be a string (const char*) 
+        * @return This function doe snot return anything
+        * @note This function prints message directly without asking
+    */
     void c_warningBox(const char* msg) {
         c_reset();
         c_setAttribute(BG_YELLOW);
         printf("%s", msg);
     }
 
-    //Function to show a message box
+    /*
+        * @brief (Linux) Function to print a message box
+        * @param msg This argument must be a string (const char*) 
+        * @return This function doe snot return anything
+        * @note This function prints message directly without asking
+    */
     void c_messageBox(const char* msg) {
         c_reset();
         c_setAttribute(BG_CYAN);
         printf("%s", msg);
     }
 
-    //Function to show a success box
+    /*
+        * @brief (Linux) Function to print a success box
+        * @param msg This argument must be a string (const char*) 
+        * @return This function doe snot return anything
+        * @note This function prints message directly without asking
+    */
     void c_successBox(const char* msg) {
         c_reset();
         c_setAttribute(BG_GREEN);
         printf("%s", msg);
     }
 
-    //Function to alert
+    /*
+        * @brief (Linux) Function to output alert audio
+        * @param msg This argument must be a string (const char*) 
+        * @return This function doe snot return anything
+        * @note This function outputs alert-audio that is built-in on current OS.
+    */
     void alertSound() {
         printf("%c", E_ALERT);
     }
@@ -225,59 +287,111 @@
 #define C_WHITE FOREGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE
 
 
-void c_setAttribute(int attribute) {
-    HANDLE  hConsole;
-    hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttribute(hConsole, attribute);
-}
+// * Windows Functions
 
-void c_reset() {
-    HANDLE  hConsole;
-    hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttribute(hConsole, C_WHITE);
-}
-
-void c_setAll(int attributes[], const size_t length) {
-    for (size_t i = 0; i < length; i++) {
-        c_setAttribute(attributes[i]);
+    /*
+        * @brief (Windows) This function sets an attribute for console look
+        * @param attribute is attribute that will be used (int)
+        * @return This function does not return anything  
+    */
+    void c_setAttribute(int attribute) {
+        HANDLE  hConsole;
+        hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+        SetConsoleTextAttribute(hConsole, attribute);
     }
-}
-//Function to show an error box
-void c_errorBox(const char* msg) {
-    c_reset();
-    c_setAttribute(FOREGROUND_INTENSITY | FOREGROUND_RED);
-    printf("%s", msg);
-}
 
-//Function to show a warning box
-void c_warningBox(const char* msg) {
-    c_reset();
-    c_setAttribute(FOREGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_GREEN);
-    printf("%s", msg);
-}
+    /*
+        * @brief (Windows) This function resets all attributes for current console
+        * This function does not take any parameters
+        * @return This function does not return anything
+    */
+    void c_reset() {
+        HANDLE  hConsole;
+        hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+        SetConsoleTextAttribute(hConsole, C_WHITE);
+    }
 
-//Function to show a message box
-void c_messageBox(const char* msg) {
-    c_reset();
-    c_setAttribute(FOREGROUND_INTENSITY | FOREGROUND_GREEN | FOREGROUND_BLUE);
-    printf("%s", msg);
-}
+    /*
+        * @brief (Windows) Function to get the current number of columns in the console
+        * This function does not take any parameters
+        * @return This function returns number of columns in current console (int)
+        * @note This function is Linux only
+    */    
+    void c_setAll(int attributes[], const size_t length) {
+        for (size_t i = 0; i < length; i++) {
+            c_setAttribute(attributes[i]);
+        }
+    }
+    
+    /*
+        * @brief (Windows) Function to print an error box
+        * @param msg This argument must be a string (const char*) 
+        * @return This function doe snot return anything
+        * @note This function prints message directly without asking
+    */
+    void c_errorBox(const char* msg) {
+        c_reset();
+        c_setAttribute(FOREGROUND_INTENSITY | FOREGROUND_RED);
+        printf("%s", msg);
+    }
 
-//Function to show a success box
-void c_successBox(const char* msg) {
-    c_reset();
-    c_setAttribute(FOREGROUND_INTENSITY | FOREGROUND_GREEN);
-    printf("%s", msg);
-}
+    /*
+        * @brief (Windows) Function to print a warning box
+        * @param msg This argument must be a string (const char*) 
+        * @return This function doe snot return anything
+        * @note This function prints message directly without asking
+    */
+    void c_warningBox(const char* msg) {
+        c_reset();
+        c_setAttribute(FOREGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_GREEN);
+        printf("%s", msg);
+    }
 
-//Function to alert
-void alertSound() {
-    printf("%c", '\a');
-}
+    /*
+        * @brief (Windows) Function to print a message box
+        * @param msg This argument must be a string (const char*) 
+        * @return This function doe snot return anything
+        * @note This function prints message directly without asking
+    */
+    void c_messageBox(const char* msg) {
+        c_reset();
+        c_setAttribute(FOREGROUND_INTENSITY | FOREGROUND_GREEN | FOREGROUND_BLUE);
+        printf("%s", msg);
+    }
+
+    /*
+        * @brief (Windows) Function to print a success box
+        * @param msg This argument must be a string (const char*) 
+        * @return This function doe snot return anything
+        * @note This function prints message directly without asking
+    */
+    void c_successBox(const char* msg) {
+        c_reset();
+        c_setAttribute(FOREGROUND_INTENSITY | FOREGROUND_GREEN);
+        printf("%s", msg);
+    }
+
+    /*
+        * @brief (Windows) Function to output alert audio
+        * @param msg This argument must be a string (const char*) 
+        * @return This function doe snot return anything
+        * @note This function outputs alert-audio that is built-in on current OS.
+    */
+    void alertSound() {
+        printf("%c", '\a');
+    }
 
 #endif
 
-// Function to draw a horizontal line with a specified width
+// * Shared Functions Between Platforms
+
+/* 
+    * @brief Function to draw a horizontal line with a specified width
+    * @param width This argument must be a number (const int) and it specifies a width for line
+    * @param horizontalChar is char that will be printed on line
+    * @return This function does not return anything
+    * @note This function outputs line directly without asking
+*/
 void c_drawHorizontalLine(const int width, const char horizontalChar) {
     for (int i = 0; i < width; i++) {
         putchar(horizontalChar);
@@ -285,7 +399,16 @@ void c_drawHorizontalLine(const int width, const char horizontalChar) {
     putchar('\n');
 }
 
-//Function to draw a box with given height and width
+/*
+    * @brief Function to draw a box with given height and width
+    * @param width This argument must be a number (const int) and it specifies width for box
+    * @param height This argument must be a number (const int) and it specifies height for box
+    * @param crossChar This argument must be a character (const char) and it will be printed on the corners of box
+    * @param horizontalChar This argument must be a character (const char) and it will be printed on top and bottom of box
+    * @param verticalChar This argument must be a character (const char) and it will be printed on the right and left of box
+    * @return This function does not return anything
+    * @note This function outputs box directly without asking
+*/
 void c_draw_box(const int width, const int height, const char crossChar, const char horizontalChar, const char verticalChar) {
     printf("%c", crossChar);
     for (int i = 0; i < width - 2; i++) {
@@ -308,7 +431,16 @@ void c_draw_box(const int width, const int height, const char crossChar, const c
     printf("%c\n", crossChar);
 }
 
-//Function to draw text box
+/*
+    * @brief Function to draw a box with given height and width
+    * @param height This argument must be a number (const int) and it specifies height for box
+    * @param crossChar This argument must be a character (const char) and it will be printed on the corners of box
+    * @param horizontalChar This argument must be a character (const char) and it will be printed on top and bottom of box
+    * @param verticalChar This argument must be a character (const char) and it will be printed on the right and left of box
+    * @param text This argument must be a string (const char*) and it will be on the center og box
+    * @return This function does not return anything
+    * @note This function outputs box directly without asking
+*/
 void c_draw_text_box(const int height, const char crossChar, const char horizontalChar, const char verticalChar, const char* text) {
     int textPoint = -1;
 
@@ -345,7 +477,12 @@ void c_draw_text_box(const int height, const char crossChar, const char horizont
     printf("%c\n", crossChar);
 }
 
-//Function to draw a circle
+/*
+    * @brief Function to draw a circle
+    * @param radius This argument must be a number (const int) and it specifies radius for circle
+    * @return This function does not return anything
+    * @note This function prints circle directly without asking
+*/
 void c_draw_circle(const int radius) {
     for (int y = -radius; y <= radius; ++y) {
         for (int x = -radius; x <= radius; ++x) {
@@ -361,7 +498,12 @@ void c_draw_circle(const int radius) {
     }
 }
 
-//Function to draw a triangle
+/*
+    * @brief Function to draw a triangle
+    * @param height This argument must be a number (const int) and it specifies height for triangle
+    * @return This function does not return anything
+    * @note This function prints triangle directly without asking
+*/
 void c_draw_triangle(const int height) {
     for (int row = 1; row <= height; ++row) {
         for (int space = 1; space <= height - row; ++space) {
@@ -374,7 +516,13 @@ void c_draw_triangle(const int height) {
     }
 }
 
-//Function to draw a triangle with text
+/*
+    * @brief Function to draw a triangle
+    * @param height This argument must be a number (const int) and it specifies height for triangle
+    * @param text This argument must be a string (const char*) and it will be printed on the center of triangle
+    * @return This function does not return anything
+    * @note Text may not be aligned to center correctly
+*/
 void c_draw_text_triangle(const int height, const char* text) {
     int textLength = strlen(text);
     int textPosition = (2 * height - 1 - textLength) / 2;
