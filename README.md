@@ -42,6 +42,7 @@
 | A        | Reset Property         |
 | E        | ASCII Escape Sequences |
 | c        | Functions              |
+| R        | Cursor Properties      |
 
 
 <h4>Now let's look at functions we can use.</h4>

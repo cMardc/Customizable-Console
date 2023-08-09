@@ -7,6 +7,5 @@
 \\ - Backslash
 \" - Double quote
 \' - Single quote
-\0 - Null character (used to terminate strings)
 \v - Vertical tab
 \? - Question mark
