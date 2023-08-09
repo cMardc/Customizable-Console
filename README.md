@@ -1,6 +1,9 @@
 <img src='assets/logo.png' alt='Logo' title='Logo'>
 
 <br>
+<br>
+<br>
+<br>
 
 ![Static Badge](https://img.shields.io/badge/Language-C-blue) 
 ![GitHub all releases](https://img.shields.io/github/downloads/cMardc/Customizable-Console/total)
@@ -64,10 +67,10 @@
 <h4>Given functions are linux only:</h4>
 <img src='assets/LinuxOnly.png' alt='Linux only' title='linux only'>
 
-<hr>
-<h2>Use cases</h2>
+<h3>Use cases</h3>
 <h4>Trying to make game or a visual app with this header file is not recommended.</h4>
 <h4>But this library helps you make your terminal app look a bit better, but not like a true visual app.</h4>
+<h4>if you're looking for a basic library / header / framework to make a C/C++ GUI app, I prefer you to use WinForms extension for C++.</h4>
 
 <hr>
 <h3>Thanks for selecting us!</h3>
