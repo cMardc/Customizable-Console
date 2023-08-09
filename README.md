@@ -32,9 +32,7 @@
 
 <hr>
 <h2>How To Use</h2>
-<h4>There are couple of functions and attributes you can use.</h4>
-<h4>And to understand things better we have naming styles. </h4>
-<h4>They are separated from original name with underline ('_'). Here are they: </h4>
+<h4>There are couple of functions and attributes you can use. To understand things better we have naming styles. They are separated from original name with underline ('_'). Here are they: </h4>
 
 | Style    | Type                   |
 | -------- | ---------------------- | 
@@ -68,9 +66,7 @@
 <img src='assets/LinuxOnly.png' alt='Linux only' title='linux only'>
 
 <h3>Use cases</h3>
-<h4>Trying to make game or a visual app with this header file is not recommended.</h4>
-<h4>But this library helps you make your terminal app look a bit better, but not like a true visual app.</h4>
-<h4>if you're looking for a basic library / header / framework to make a C/C++ GUI app, I prefer you to use WinForms extension for C++.</h4>
+<h4>Trying to make game or a visual app with this header file is not recommended, But this library helps you make your terminal app look a bit better, but not like a true visual app. If you're looking for a basic library / header / framework to make a C/C++ GUI app, I prefer you to use WinForms extension for C++.</h4>
 
 <hr>
 <h3>Thanks for selecting us!</h3>
