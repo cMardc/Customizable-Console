@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customizable Console - Documentation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="doc.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="doc.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="overlay"></div>
+         
+             <!-- Sidebar -->
+         <nav class="navbar navbar-inverse fixed-top" id="sidebar-wrapper" role="navigation">
+          <ul class="nav sidebar-nav">
+            <div class="sidebar-header">
+            <div class="sidebar-brand">
+              <a href="#"> $ Customizable</a></div></div>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="../src/ConsoleColor.h" download>Download</a></li>
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle"  data-toggle="dropdown"> Documentation <span class="caret"></span></a>
+          <ul class="dropdown-menu animated fadeInLeft" role="menu">
+            <div class="dropdown-header">Linux</div>
+            <li><a href="linuxPreDefines.html">Pre-Defines</a></li>
+            <li><a href="linuxFunctions.html">Functions</a></li>
+            <div class="dropdown-header">Windows</div>
+            <li><a href="windowsPreDefines.html">Pre-Defines</a></li>
+            <li><a href="windowsFunctions.html">Functions</a></li>
+            <div class="dropdown-header">Shared</div>
+            <li><a href="sharedFunctions.html">Functions</a></li>
+           </ul>
+           </li>
+           <li><a href="https://discord.gg/5W4XtHkc6g">Discord</a></li>
+           <li><a href="https://github.com/cMardc/Customizable-Console">Github</a></li>
+       </nav>
+             <!-- /#sidebar-wrapper -->
+     
+             <!-- Page Content -->
+             <div id="page-content-wrapper">
+                 <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
+                     <span class="hamb-top"></span>
+                     <span class="hamb-middle"></span>
+                     <span class="hamb-bottom"></span>
+                 </button>
+                 <div class="container">
+                     <div class="row">
+                         <div class="col-lg-8 col-lg-offset-2">
+                             <h1>Customizable Console - Documentation</h1>
+                            <br>
+                            <br>
+                             <div id="repo" class="card" style="width: 30rem;">
+                                <img class="card-img-top" src="../assets/windows-logo.png" alt="Logo">
+                                <div class="card-body">
+                                    <h5 class="card-title">What is Windows? </h5>
+                                    <p class="card-text">Microsoft Windows is an operating system developed by Microsoft Corporation. It was first released in 1985 and has since become one of the most widely used operating systems in the world.<br><br>Windows is utilized across various sectors including business, home computing, and gaming. It provides a user-friendly interface and a wide range of software applications for different purposes. Windows is particularly popular among general users and software developers alike. Our library is fully compatible and functional within the Windows environment, allowing developers to create and run their applications seamlessly.</p>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                             <p>In this section of documentation, we'll look at <a href="https://en.wikipedia.org/wiki/Preprocessor#:~:text=In%20computer%20science%2C%20a%20preprocessor,some%20subsequent%20programs%20like%20compilers.">pre-processor defines</a> for our library on windows platform. We defined our attributes and properties on the beginning of code. Our attributes and properties are mostly used as a parameter or an argument to other functions included in our library. If you don't know what pre-processor is, it's a set of instructions for compiler to understand before compiling the code.</p>
+                             <p>Now, before looking at definitions, let's first look at what <a href="https://en.wikipedia.org/wiki/Windows_API">WIN32 API</a> is. WIN32 is an <a href="https://en.wikipedia.org/wiki/API">API (Stands for "Application Programming Interface")</a>. Yes, API is a set of instructions where two or more computers communicate with each other, of course when using languages like C/C++ or any <a href="https://en.wikipedia.org/wiki/List_of_C-family_programming_languages">C-Like language</a>. WIN32 API is a library style API for developers to make windows-special apps. Of course nowadays this API is not being used because of it's complexity. And Microsoft changed to another framework called <a href="https://en.wikipedia.org/wiki/.NET">.NET</a>. But in this project we used only a few functions and attributes from original WIN32.</p>
+                             <p>Now, we can take a look at our definitions.</p>
+                             <br>
+                             <img src="../assets/windowsDefines.png" alt="Linux Definitions" width="1000" height="850">
+                             <br>
+                             <p>You don't have to learn all of these values, writing their name in code is enough, so these will save your time a lot.</p>       
+                             <a href="windowsFunctions.html" class="btn btn-primary">Windows Functions</a>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <!-- /#page-content-wrapper -->
+     
+         </div>
+         <!-- /#wrapper -->
+</body>
+</html>

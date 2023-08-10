@@ -212,7 +212,7 @@
     /*
         * @brief (Linux) Function to print an error box
         * @param msg This argument must be a string (const char*) 
-        * @return This function doe snot return anything
+        * @return This function does not return anything
         * @note This function prints message directly without asking
     */
     void c_errorBox(const char* msg) {
@@ -224,7 +224,7 @@
     /*
         * @brief (Linux) Function to print a warning box
         * @param msg This argument must be a string (const char*) 
-        * @return This function doe snot return anything
+        * @return This function does not return anything
         * @note This function prints message directly without asking
     */
     void c_warningBox(const char* msg) {
@@ -236,7 +236,7 @@
     /*
         * @brief (Linux) Function to print a message box
         * @param msg This argument must be a string (const char*) 
-        * @return This function doe snot return anything
+        * @return This function does not return anything
         * @note This function prints message directly without asking
     */
     void c_messageBox(const char* msg) {
@@ -248,7 +248,7 @@
     /*
         * @brief (Linux) Function to print a success box
         * @param msg This argument must be a string (const char*) 
-        * @return This function doe snot return anything
+        * @return This function does not return anything
         * @note This function prints message directly without asking
     */
     void c_successBox(const char* msg) {
@@ -259,11 +259,11 @@
 
     /*
         * @brief (Linux) Function to output alert audio
-        * @param msg This argument must be a string (const char*) 
-        * @return This function doe snot return anything
+        * This function doe snot take any parameters
+        * @return This function does not return anything
         * @note This function outputs alert-audio that is built-in on current OS.
     */
-    void alertSound() {
+    void c_alertSound() {
         printf("%c", E_ALERT);
     }
 
@@ -312,10 +312,10 @@
     }
 
     /*
-        * @brief (Windows) Function to get the current number of columns in the console
-        * This function does not take any parameters
-        * @return This function returns number of columns in current console (int)
-        * @note This function is Linux only
+        * @brief (Windows) Function to set multiple attributes
+        * @param attributes array of arguments that will be applied (int [])
+        * @param length Length of first argument (const size_t)
+        * @return This function does not return anything
     */    
     void c_setAll(int attributes[], const size_t length) {
         for (size_t i = 0; i < length; i++) {
@@ -326,7 +326,7 @@
     /*
         * @brief (Windows) Function to print an error box
         * @param msg This argument must be a string (const char*) 
-        * @return This function doe snot return anything
+        * @return This function does not return anything
         * @note This function prints message directly without asking
     */
     void c_errorBox(const char* msg) {
@@ -338,7 +338,7 @@
     /*
         * @brief (Windows) Function to print a warning box
         * @param msg This argument must be a string (const char*) 
-        * @return This function doe snot return anything
+        * @return This function does not return anything
         * @note This function prints message directly without asking
     */
     void c_warningBox(const char* msg) {
@@ -350,7 +350,7 @@
     /*
         * @brief (Windows) Function to print a message box
         * @param msg This argument must be a string (const char*) 
-        * @return This function doe snot return anything
+        * @return This function does not return anything
         * @note This function prints message directly without asking
     */
     void c_messageBox(const char* msg) {
@@ -362,7 +362,7 @@
     /*
         * @brief (Windows) Function to print a success box
         * @param msg This argument must be a string (const char*) 
-        * @return This function doe snot return anything
+        * @return This function does not return anything
         * @note This function prints message directly without asking
     */
     void c_successBox(const char* msg) {
@@ -374,10 +374,10 @@
     /*
         * @brief (Windows) Function to output alert audio
         * @param msg This argument must be a string (const char*) 
-        * @return This function doe snot return anything
+        * @return This function does not return anything
         * @note This function outputs alert-audio that is built-in on current OS.
     */
-    void alertSound() {
+    void c_alertSound() {
         printf("%c", '\a');
     }
 

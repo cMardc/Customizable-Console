@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customizable Console - Documentation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="doc.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="doc.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="overlay"></div>
+         
+             <!-- Sidebar -->
+         <nav class="navbar navbar-inverse fixed-top" id="sidebar-wrapper" role="navigation">
+          <ul class="nav sidebar-nav">
+            <div class="sidebar-header">
+            <div class="sidebar-brand">
+              <a href="#"> >_ Customizable</a></div></div>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="../src/ConsoleColor.h" download>Download</a></li>
+            <li><a href="windowsPreDefines.html">Start On Windows</a></li>
+            <li><a href="linuxPreDefines.html">Start On Linux</a></li>
+            <li><a href="sharedFunctions.html">Start On Shared</a></li>
+           <li><a href="https://discord.gg/5W4XtHkc6g">Discord</a></li>
+           <li><a href="https://github.com/cMardc/Customizable-Console">Github</a></li>
+       </nav>
+             <!-- /#sidebar-wrapper -->
+     
+             <!-- Page Content -->
+             <div id="page-content-wrapper">
+                 <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
+                     <span class="hamb-top"></span>
+                     <span class="hamb-middle"></span>
+                     <span class="hamb-bottom"></span>
+                 </button>
+                 <div class="container">
+                     <div class="row">
+                         <div class="col-lg-8 col-lg-offset-2">
+                             <h1>Customizable Console - Documentation</h1>
+                            <br>
+                            <br>
+                             <div id="repo" class="card" style="width: 30rem;">
+                                <img class="card-img-top" src="../assets/logo.png" alt="Logo">
+                                <div class="card-body">
+                                    <h5 class="card-title">What is documentation? </h5>
+                                    <p class="card-text">This page allows users and developers to use our library efficiently and understand how these work. There are awesome things that will make your day easier as a developer. There are builtin functions and properties for you to use, and you may not know all of them, or don't even know any of them, and this is where documentation comes to help</p>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                             <p>If you don't know what this library is for you can always check out our <a href="index.html">home page</a>, but simply: this library allows you to make your console applications look better and simple. Our library is written in <a href="https://en.wikipedia.org/wiki/C_(programming_language)">C</a> programming language and can be used in <a href="https://en.wikipedia.org/wiki/C_(programming_language)">C</a> and <a href="https://en.wikipedia.org/wiki/C%2B%2B">C++</a>.</p>
+                             <p>Before, we get started to documentation, let's look at how names are configured in this library. Every different type of variable, property or function has a starting. This way anyone can understand what are these. </p>
+                             <table>
+                                <tr>
+                                  <th>Name</th>
+                                  <th>Type</th>
+                                </tr>
+                                <tr>
+                                  <td>C</td>
+                                  <td>Color Property</td>
+                                </tr>
+                                <tr>
+                                  <td>BG</td>
+                                  <td>Background Property</td>
+                                </tr>
+                                <tr>
+                                    <td>S</td>
+                                    <td>Text Styles</td>
+                                </tr>
+                                <tr>
+                                    <td>A</td>
+                                    <td>Reset Property</td>
+                                </tr>
+                                <tr>
+                                    <td>E</td>
+                                    <td>ASCII Escape Sequences</td>
+                                </tr>
+                                <tr>
+                                    <td>c</td>
+                                    <td>Functions</td>
+                                </tr>
+                                <tr>
+                                    <td>R</td>
+                                    <td>Cursor Properties</td>
+                                </tr>
+                              </table>
+                              <br>
+                              <br>
+                             <p>You can find more information at our <a href="https://github.com/cMardc/Customizable-Console">Github page</a>. And all of our application is completely open-source under <a href="https://en.wikipedia.org/wiki/MIT_License">MIT license</a>, meaning that you can use, share, publish, improve, copy and use our code how you want.More about our <a href="https://github.com/cMardc/Customizable-Console/blob/main/LICENSE">License</a>.</p>
+                             <p>We prefer you to select one of your platform from the sidebar, and continue reading our documentation.</p>       
+                             <a href="windowsPreDefines.html" class="btn btn-primary">Windows</a>
+                             <a href="linuxPreDefines.html" class="btn btn-primary">Linux</a>
+                             <button type="button" class="btn btn-primary" disabled title="Not Available Yet" id="notavailable">MacOS</button>
+                             <a href="sharedFunctions.html" class="btn btn-primary">Shared</a>
+
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <!-- /#page-content-wrapper -->
+     
+         </div>
+         <!-- /#wrapper -->
+</body>
+</html>

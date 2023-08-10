@@ -5,7 +5,12 @@
         "DARKGREEN",
         "DARKMAGENTA",
         "DARKRED",
-        "DARKYELLOW"
+        "DARKYELLOW",
+        "followme",
+        "Fontawesome",
+        "hamb",
+        "Kernighan",
+        "Ritchie"
     ],
     "C_Cpp.errorSquiggles": "enabled",
     "files.associations": {

@@ -1,0 +1,62 @@
+#logo {
+    background-image: linear-gradient(to right, pink, purple);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+body {
+    background-color: rgb(71, 70, 93);
+    background-color: rgb(94, 95, 111);
+}
+
+#linksDropdown {
+    background-color: rgb(71, 70, 93);
+}
+
+.dropdown-item:hover {
+    background-color: rgb(75, 73, 157);
+}
+
+#mainLabel {
+    width: 50vw;
+    background-color: rgb(71, 70, 93);
+    border-color: aqua;
+    padding: 20px;
+    color: rgb(125, 142, 80);
+    display: inline-block;
+}
+
+#exampleImage {
+    display: inline-block;
+    margin: 90px;
+    width: 700px;
+    height: 360px;
+}
+
+#repo {
+    width: 50vw;
+    background-color: rgb(71, 70, 93);
+    border-color: rgb(223, 110, 163);
+    padding: 20px;
+    color: rgb(105, 221, 203);
+    display: inline-block;
+    border-width: 3px;
+}
+
+#gitREPO {
+    background-image: linear-gradient(to right, pink, purple);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+#repo2 {
+    width: 50vw;
+    background-color: rgb(71, 70, 93);
+    border-color: rgb(214, 223, 110);
+    padding: 20px;
+    color: rgb(146, 105, 221);
+    display: inline-block;
+
+}
