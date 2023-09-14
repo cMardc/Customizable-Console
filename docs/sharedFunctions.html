@@ -1,173 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customizable Console - Documentation</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="doc.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <script src="doc.js"></script>
 </head>
+
 <body>
     <div id="wrapper">
         <div class="overlay"></div>
-         
-             <!-- Sidebar -->
-         <nav class="navbar navbar-inverse fixed-top" id="sidebar-wrapper" role="navigation">
-          <ul class="nav sidebar-nav">
-            <div class="sidebar-header">
-            <div class="sidebar-brand">
-              <a href="#"> $ Customizable</a></div></div>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="ConsoleColor.h" download>Download</a></li>
-            <li class="dropdown">
-            <a href="#" class="dropdown-toggle"  data-toggle="dropdown"> Documentation <span class="caret"></span></a>
-          <ul class="dropdown-menu animated fadeInLeft" role="menu">
-            <div class="dropdown-header">Linux</div>
-            <li><a href="linuxPreDefines.html">Pre-Defines</a></li>
-            <li><a href="linuxFunctions.html">Functions</a></li>
-            <div class="dropdown-header">Windows</div>
-            <li><a href="windowsPreDefines.html">Pre-Defines</a></li>
-            <li><a href="windowsFunctions.html">Functions</a></li>
-            <div class="dropdown-header">Shared</div>
-            <li><a href="sharedFunctions.html">Functions</a></li>
-           </ul>
-           </li>
-           <li><a href="https://discord.gg/5W4XtHkc6g">Discord</a></li>
-           <li><a href="https://github.com/cMardc/Customizable-Console">Github</a></li>
-       </nav>
-             <!-- /#sidebar-wrapper -->
-     
-             <!-- Page Content -->
-             <div id="page-content-wrapper">
-                 <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
-                     <span class="hamb-top"></span>
-                     <span class="hamb-middle"></span>
-                     <span class="hamb-bottom"></span>
-                 </button>
-                 <div class="container">
-                     <div class="row">
-                         <div class="col-lg-8 col-lg-offset-2">
-                             <h1>Customizable Console - Documentation</h1>
-                            <br>
-                            <br>
-                             <div id="repo" class="card" style="width: 30rem;">
-                                <img class="card-img-top" src="assets/cLogoCrossplatform.png" alt="Logo">
-                                <div class="card-body">
-                                    <h5 class="card-title">Cross-Platform C Programs</h5>
-                                    <p class="card-text">Cross-platform prowess defines the remarkable versatility of the <a href="https://en.wikipedia.org/wiki/C_(programming_language)">C programming language</a>, showcasing its enduring relevance in the ever-evolving software landscape. From <a href="https://en.wikipedia.org/wiki/Microsoft_Windows">Windows</a> to <a href="https://en.wikipedia.org/wiki/Linux">Linux</a>, <a href="https://en.wikipedia.org/wiki/MacOS">macOS</a> to <a href="https://en.wikipedia.org/wiki/Unix">UNIX</a>, and even venturing into embedded systems like <a href="https://en.wikipedia.org/wiki/FreeRTOS">FreeRTOS</a>, C remains a lingua franca for developers aiming to transcend platform boundaries. This power lies in C's portability, enabling code to seamlessly traverse diverse ecosystems while maintaining performance and reliability. Whether it's harnessing the language's low-level control for crafting efficient software, bridging legacy and modern systems, or orchestrating intricate interactions within constrained environments, C's ability to navigate this expansive spectrum underscores its enduring role in cross-platform app development.<br><br>Delving even further into C's adaptability, its domain extends to reviving the digital vestiges of yesteryears. In the realm of retro computing, where vintage terminals and archaic systems endure, C provides a bridge to the past. It enables developers to resurrect old interfaces and interoperate with aging hardware, breathing new life into legacy systems through revitalized software experiences. Beyond these nostalgic frontiers, C transcends into the contemporary landscape, serving as a unifying force across the intricate tapestry of platforms, from the intricate intricacies of embedded systems to the vast expanse of modern operating systems, solidifying its status as a timeless language of cross-platform innovation.</p>
+
+        <!-- Sidebar -->
+        <nav class="navbar navbar-inverse fixed-top" id="sidebar-wrapper" role="navigation">
+            <ul class="nav sidebar-nav">
+                <div class="sidebar-header">
+                    <div class="sidebar-brand">
+                        <a href="#"> $ Customizable</a>
+                    </div>
+                </div>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ConsoleColor.h" download>Download</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Documentation <span
+                            class="caret"></span></a>
+                    <ul class="dropdown-menu animated fadeInLeft" role="menu">
+                        <div class="dropdown-header">Linux</div>
+                        <li><a href="linuxPreDefines.html">Pre-Defines</a></li>
+                        <li><a href="linuxFunctions.html">Functions</a></li>
+                        <div class="dropdown-header">Windows</div>
+                        <li><a href="windowsPreDefines.html">Pre-Defines</a></li>
+                        <li><a href="windowsFunctions.html">Functions</a></li>
+                        <div class="dropdown-header">Shared</div>
+                        <li><a href="sharedFunctions.html">Functions</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://discord.gg/5W4XtHkc6g">Discord</a></li>
+                <li><a href="https://github.com/cMardc/Customizable-Console">Github</a></li>
+        </nav>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
+                <span class="hamb-top"></span>
+                <span class="hamb-middle"></span>
+                <span class="hamb-bottom"></span>
+            </button>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <h1>Customizable Console - Documentation</h1>
+                        <br>
+                        <br>
+                        <div id="repo" class="card" style="width: 30rem;">
+                            <img class="card-img-top" src="assets/cLogoCrossplatform.png" alt="Logo">
+                            <div class="card-body">
+                                <h5 class="card-title">Cross-Platform C Programs</h5>
+                                <p class="card-text">Cross-platform prowess defines the remarkable versatility of the <a
+                                        href="https://en.wikipedia.org/wiki/C_(programming_language)">C programming
+                                        language</a>, showcasing its enduring relevance in the ever-evolving software
+                                    landscape. From <a
+                                        href="https://en.wikipedia.org/wiki/Microsoft_Windows">Windows</a> to <a
+                                        href="https://en.wikipedia.org/wiki/Linux">Linux</a>, <a
+                                        href="https://en.wikipedia.org/wiki/MacOS">macOS</a> to <a
+                                        href="https://en.wikipedia.org/wiki/Unix">UNIX</a>, and even venturing into
+                                    embedded systems like <a href="https://en.wikipedia.org/wiki/FreeRTOS">FreeRTOS</a>,
+                                    C remains a lingua franca for developers aiming to transcend platform boundaries.
+                                    This power lies in C's portability, enabling code to seamlessly traverse diverse
+                                    ecosystems while maintaining performance and reliability. Whether it's harnessing
+                                    the language's low-level control for crafting efficient software, bridging legacy
+                                    and modern systems, or orchestrating intricate interactions within constrained
+                                    environments, C's ability to navigate this expansive spectrum underscores its
+                                    enduring role in cross-platform app development.<br><br>Delving even further into
+                                    C's adaptability, its domain extends to reviving the digital vestiges of
+                                    yesteryears. In the realm of retro computing, where vintage terminals and archaic
+                                    systems endure, C provides a bridge to the past. It enables developers to resurrect
+                                    old interfaces and interoperate with aging hardware, breathing new life into legacy
+                                    systems through revitalized software experiences. Beyond these nostalgic frontiers,
+                                    C transcends into the contemporary landscape, serving as a unifying force across the
+                                    intricate tapestry of platforms, from the intricate intricacies of embedded systems
+                                    to the vast expanse of modern operating systems, solidifying its status as a
+                                    timeless language of cross-platform innovation.</p>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <p>In this section of documentation, we'll look at functions in our library that can run on
+                            every system that can compile C/C++ code and run it. With all of details and codes.</p>
+                        <br>
+                        <div class="card" style="width: 80rem;">
+                            <div class="card-body" id="cardCode">
+                                <h5 id="codeTitle" class="card-title">c_drawHorizontalLine</h5>
+                                <p class="card-text">Function to draw a horizontal line with a specified
+                                    width<br>Parameter width - This argument must be a number (const int) and it
+                                    specifies a width for line<br>Parameter horizontalChar - is a char that will be
+                                    printed on line<br>This function does not return anything</p>
+                                <img src="assets/drawHorizontalLineF.png" alt="c_setAttribute" width="910" height="351">
+                                <br>
+                                <br>
+                                <br>
+                                <div class="alert alert-info" role="alert">
+                                    This function outputs line directly without asking
                                 </div>
                             </div>
-                            <br>
-                            <br>
-                            <br>
-                             <p>In this section of documentation, we'll look at functions in our library that can run on every system that can compile C/C++ code and run it. With all of details and codes.</p>
-                             <br>
-                             <div class="card" style="width: 80rem;">
-                                <div class="card-body" id="cardCode">
-                                    <h5 id="codeTitle" class="card-title">c_drawHorizontalLine</h5>
-                                    <p class="card-text">Function to draw a horizontal line with a specified width<br>Parameter width - This argument must be a number (const int) and it specifies a width for line<br>Parameter horizontalChar - is a char that will be printed on line<br>This function does not return anything</p>
-                                    <img src="assets/drawHorizontalLineF.png" alt="c_setAttribute" width="910" height="351">
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <div class="alert alert-info" role="alert">
-                                        This function outputs line directly without asking
-                                    </div>
+                        </div>
+                        <br>
+                        <div class="card" style="width: 80rem;">
+                            <div class="card-body" id="cardCode">
+                                <h5 id="codeTitle" class="card-title">c_draw_box</h5>
+                                <p class="card-text">Function to draw a box with given height and width<br>Parameter
+                                    width - This argument must be a number (const int) and it specifies width for
+                                    box<br>Parameter height - This argument must be a number (const int) and it
+                                    specifies height for box<br>Parameter crossChar - This argument must be a character
+                                    (const char) and it will be printed on the corners of box<br>Parameter
+                                    horizontalChar - This argument must be a character (const char) and it will be
+                                    printed on top and bottom of box<br>Parameter verticalChar - This argument must be a
+                                    character (const char) and it will be printed on the right and left of box<br>This
+                                    function does not return anything<br></p>
+                                <img src="assets/drawbox.png" alt="c_setAttribute" width="1050" height="854">
+                                <br>
+                                <br>
+                                <br>
+                                <div class="alert alert-info" role="alert">
+                                    This function outputs box directly without asking
                                 </div>
-                             </div>
-                             <br>
-                             <div class="card" style="width: 80rem;">
-                                <div class="card-body" id="cardCode">
-                                    <h5 id="codeTitle" class="card-title">c_draw_box</h5>
-                                    <p class="card-text">Function to draw a box with given height and width<br>Parameter width - This argument must be a number (const int) and it specifies width for box<br>Parameter height - This argument must be a number (const int) and it specifies height for box<br>Parameter crossChar - This argument must be a character (const char) and it will be printed on the corners of box<br>Parameter horizontalChar - This argument must be a character (const char) and it will be printed on top and bottom of box<br>Parameter verticalChar - This argument must be a character (const char) and it will be printed on the right and left of box<br>This function does not return anything<br></p>
-                                    <img src="assets/drawbox.png" alt="c_setAttribute" width="1050" height="854">
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <div class="alert alert-info" role="alert">
-                                        This function outputs box directly without asking
-                                    </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="card" style="width: 80rem;">
+                            <div class="card-body" id="cardCode">
+                                <h5 id="codeTitle" class="card-title">c_draw_box</h5>
+                                <p class="card-text">Function to draw a box with given height and width<br>Parameter
+                                    width - This argument must be a number (const int) and it specifies width for
+                                    box<br>Parameter height - This argument must be a number (const int) and it
+                                    specifies height for box<br>Parameter crossChar - This argument must be a character
+                                    (const char) and it will be printed on the corners of box<br>Parameter
+                                    horizontalChar - This argument must be a character (const char) and it will be
+                                    printed on top and bottom of box<br>Parameter verticalChar - This argument must be a
+                                    character (const char) and it will be printed on the right and left of box<br>This
+                                    function does not return anything<br></p>
+                                <img src="assets/drawbox.png" alt="c_setAttribute" width="1050" height="854">
+                                <br>
+                                <br>
+                                <br>
+                                <div class="alert alert-info" role="alert">
+                                    This function outputs box directly without asking
                                 </div>
-                             </div>
-                             <br>
-                             <div class="card" style="width: 80rem;">
-                                <div class="card-body" id="cardCode">
-                                    <h5 id="codeTitle" class="card-title">c_draw_box</h5>
-                                    <p class="card-text">Function to draw a box with given height and width<br>Parameter width - This argument must be a number (const int) and it specifies width for box<br>Parameter height - This argument must be a number (const int) and it specifies height for box<br>Parameter crossChar - This argument must be a character (const char) and it will be printed on the corners of box<br>Parameter horizontalChar - This argument must be a character (const char) and it will be printed on top and bottom of box<br>Parameter verticalChar - This argument must be a character (const char) and it will be printed on the right and left of box<br>This function does not return anything<br></p>
-                                    <img src="assets/drawbox.png" alt="c_setAttribute" width="1050" height="854">
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <div class="alert alert-info" role="alert">
-                                        This function outputs box directly without asking
-                                    </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="card" style="width: 80rem;">
+                            <div class="card-body" id="cardCode">
+                                <h5 id="codeTitle" class="card-title">c_draw_text_box</h5>
+                                <p class="card-text">Function to draw a box with given height and width<br>Parameter
+                                    height - This argument must be a number (const int) and it specifies height for
+                                    box<br>Parameter crossChar - This argument must be a character (const char) and it
+                                    will be printed on the corners of box<br>Parameter horizontalChar - This argument
+                                    must be a character (const char) and it will be printed on top and bottom of
+                                    box<br>Parameter verticalChar - This argument must be a character (const char) and
+                                    it will be printed on the right and left of box<br>ext This argument must be a
+                                    string (const char*) and it will be on the center og box<br>This function does not
+                                    return anything<br></p>
+                                <img src="assets/drawtextbox.png" alt="c_setAttribute" width="900" height="1100">
+                                <br>
+                                <br>
+                                <br>
+                                <div class="alert alert-info" role="alert">
+                                    This function outputs box directly without asking
                                 </div>
-                             </div>
-                             <br>
-                             <div class="card" style="width: 80rem;">
-                                <div class="card-body" id="cardCode">
-                                    <h5 id="codeTitle" class="card-title">c_draw_text_box</h5>
-                                    <p class="card-text">Function to draw a box with given height and width<br>Parameter height - This argument must be a number (const int) and it specifies height for box<br>Parameter crossChar - This argument must be a character (const char) and it will be printed on the corners of box<br>Parameter horizontalChar - This argument must be a character (const char) and it will be printed on top and bottom of box<br>Parameter verticalChar - This argument must be a character (const char) and it will be printed on the right and left of box<br>ext This argument must be a string (const char*) and it will be on the center og box<br>This function does not return anything<br></p>
-                                    <img src="assets/drawtextbox.png" alt="c_setAttribute" width="900" height="1100">
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <div class="alert alert-info" role="alert">
-                                        This function outputs box directly without asking
-                                    </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="card" style="width: 80rem;">
+                            <div class="card-body" id="cardCode">
+                                <h5 id="codeTitle" class="card-title">c_draw_circle</h5>
+                                <p class="card-text">Function to draw a circle<br>Parameter radius - This argument must
+                                    be a number (const int) and it specifies radius for circle<br>This function does not
+                                    return anything<br></p>
+                                <img src="assets/drawCircle.png" alt="c_setAttribute" width="800" height="500">
+                                <br>
+                                <br>
+                                <br>
+                                <div class="alert alert-info" role="alert">
+                                    This function outputs circle directly without asking
                                 </div>
-                             </div>
-                             <br>
-                             <div class="card" style="width: 80rem;">
-                                <div class="card-body" id="cardCode">
-                                    <h5 id="codeTitle" class="card-title">c_draw_circle</h5>
-                                    <p class="card-text">Function to draw a circle<br>Parameter radius - This argument must be a number (const int) and it specifies radius for circle<br>This function does not return anything<br></p>
-                                    <img src="assets/drawCircle.png" alt="c_setAttribute" width="800" height="500">
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <div class="alert alert-info" role="alert">
-                                        This function outputs circle directly without asking
-                                    </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="card" style="width: 80rem;">
+                            <div class="card-body" id="cardCode">
+                                <h5 id="codeTitle" class="card-title">c_draw_triangle</h5>
+                                <p class="card-text">Function to draw a triangle<br>Parameter height - This argument
+                                    must be a number (const int) and it specifies height for triangle<br>This function
+                                    does not return anything<br></p>
+                                <img src="assets/drawTriangle.png" alt="c_setAttribute" width="800" height="500">
+                                <br>
+                                <br>
+                                <br>
+                                <div class="alert alert-info" role="alert">
+                                    This function outputs triangle directly without asking
                                 </div>
-                             </div>
-                             <br>
-                             <div class="card" style="width: 80rem;">
-                                <div class="card-body" id="cardCode">
-                                    <h5 id="codeTitle" class="card-title">c_draw_triangle</h5>
-                                    <p class="card-text">Function to draw a triangle<br>Parameter height - This argument must be a number (const int) and it specifies height for triangle<br>This function does not return anything<br></p>
-                                    <img src="assets/drawTriangle.png" alt="c_setAttribute" width="800" height="500">
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <div class="alert alert-info" role="alert">
-                                        This function outputs triangle directly without asking
-                                    </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="card" style="width: 80rem;">
+                            <div class="card-body" id="cardCode">
+                                <h5 id="codeTitle" class="card-title">c_draw_text_triangle</h5>
+                                <p class="card-text">Function to draw a triangle<br>Parameter height - This argument
+                                    must be a number (const int) and it specifies height for triangle<br>text This
+                                    argument must be a string (const char*) and it will be printed on the center of
+                                    triangle<br>This function does not return anything<br></p>
+                                <img src="assets/drawtexttriangle.png" alt="c_setAttribute" width="800">
+                                <br>
+                                <br>
+                                <br>
+                                <div class="alert alert-info" role="alert">
+                                    Text may not be aligned to center correctly
                                 </div>
-                             </div>
-                             <br>
-                             <div class="card" style="width: 80rem;">
-                                <div class="card-body" id="cardCode">
-                                    <h5 id="codeTitle" class="card-title">c_draw_text_triangle</h5>
-                                    <p class="card-text">Function to draw a triangle<br>Parameter height - This argument must be a number (const int) and it specifies height for triangle<br>text This argument must be a string (const char*) and it will be printed on the center of triangle<br>This function does not return anything<br></p>
-                                    <img src="assets/drawtexttriangle.png" alt="c_setAttribute" width="800" height="700">
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <div class="alert alert-info" role="alert">
-                                        Text may not be aligned to center correctly
-                                    </div>
-                                </div>
-                             </div>
-                     </div>
-                 </div>
-             </div>
-             <!-- /#page-content-wrapper -->
-         </div>
-         <!-- /#wrapper -->
+                            </div>
+                        </div>
+                        <br>
+                        <div class="card" style="width: 80rem;">
+                            <div class="card-body" id="cardCode">
+                                <h5 id="codeTitle" class="card-title">c_printTable</h5>
+                                <p class="card-text">
+                                    Function to draw a table<br>
+                                    tableData two dimensional string array that will be printed (const char***)<br>
+                                    numRows number of rows in table (int)<br>
+                                    numCols number of columns in table (int*)<br></p>
+                                <img src="assets/table.png" alt="c_setAttribute" width="800">
+                                <br>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /#page-content-wrapper -->
+        </div>
+        <!-- /#wrapper -->
 </body>
+
 </html>
